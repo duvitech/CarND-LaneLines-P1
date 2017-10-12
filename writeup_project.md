@@ -28,46 +28,53 @@ The goals of this project was to create a pipeline to detect left and right lane
 
 ### 1. Pipeline Description
 
-My pipeline consisted of 6 steps to achieve the desired results. 
+The image pipeline consisted of 6 steps to process the image/frame RGB data and 
+annotate lane lines that are found onto the original image/frame. 
 
-STEP 1: I converted the image/frame to grayscale 
+STEP 1: We must convert the image to grayscale to normalize the image pixels between 0-255 
 
 ![alt text][image1]
 
-STEP 2: Using the output of step one create a Gaussian Blurred image 
+STEP 2: Using the output of step one create a Gaussian Blurred image to reduce noise 
+	and unwanted details and textures. 
 
 ![alt text][image2]
 
-STEP 3: Using the output of step three perform canny edge detection on image 
+STEP 3: Using the output of step three perform canny edge detection which determines edges
+	in the image from transition gradients.
 
 ![alt text][image3]
 
-STEP 4: Generate a mask area to create a region of interest and apply to canny edge result
+STEP 4: Generate a mask area to create a region of interest and apply this region to the 
+	canny edge result removing areas of the image we are not interested in.
 
 ![alt text][image4]
 
 ![alt text][image5]
 
-STEP 5: Find the slopes of the lines within our region of interest and determine if they are 
-	making up the left or right lane.  Using the averaged slope, generate lane lines for right
-	and left lanes.
+STEP 5: Find the slopes of the lines detected by the canny edge algorithm that fall within 
+	our region of interest. Calculating their slope we determine if the lines make up the 
+	left or right lane.  Using the averaged slopes, we generate lane lines for right and 
+	left lanes.
 	
 ![alt text][image6]
 
-STEP 6: Overlay Lane Lines onto original image/frame 
+STEP 6: Overlay Lane Lines onto original image/frame for annotation of the image
 
 ![alt text][image7]
 
 ### 2. Identifying potential shortcomings with my current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+This is a rather simplistic algorithm and will perform poorly with winding roads.
+	This algorithm will also have issues with various weather conditions and different lighting.
 
 
 ### 3. Possible future improvements to my pipeline
 
-A possible improvement would be to ...
+A possible improvement is to change the colorspace to HSV instead of grayscale which will allow 
+	for selecting yellow or white lines a little better.  Currently my pipeline does not try to 
+	isolate the yellow, but picks it up rather well.
 
-Another potential improvement could be to ...
+Another potential improvement would be to write a better algorithm for finding the lanes so when 
+	lanes curve they will be picked up and annotated correctly.  I think another improvement would
+	be to track the polygon of the detected lane.

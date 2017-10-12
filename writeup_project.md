@@ -1,16 +1,15 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
+## George Vigelette
 ---
 
 **Finding Lane Lines on the Road**
 
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
+
+In this project I perform detection of lane lines in images and Video clips using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
+
+The goals of this project was to create a pipeline to detect left and right lane lines and describe the pipeline.
 
 
 [//]: # (Image References)
@@ -21,7 +20,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline Description
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
@@ -32,7 +31,7 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ![alt text][image1]
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Identifying potential shortcomings with my current pipeline
 
 
 One potential shortcoming would be what would happen when ... 
@@ -40,7 +39,7 @@ One potential shortcoming would be what would happen when ...
 Another shortcoming could be ...
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible future improvements to my pipeline
 
 A possible improvement would be to ...
 

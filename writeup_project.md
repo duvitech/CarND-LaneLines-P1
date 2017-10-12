@@ -14,7 +14,7 @@ The goals of this project was to create a pipeline to detect left and right lane
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/grayscale.jpg "Grayscale"
 
 ---
 
